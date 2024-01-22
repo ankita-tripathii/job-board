@@ -2,6 +2,7 @@ import React from 'react'
 import Stack from 'react-bootstrap/Stack';
 import DNavbar from "../components/navbar/navbar";
 import Header from "../components/header/header";
+import Joblist from "../components/jobList/jobList";
 import Footer from "../components/footer/footer";
 
 
@@ -12,8 +13,9 @@ function Home() {
     <Stack gap={2}>
     <DNavbar/>
     <Header/>
-    </Stack>
+    <Joblist/>
     <Footer/>
+    </Stack>
     </>
   )
 }
