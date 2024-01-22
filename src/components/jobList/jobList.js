@@ -61,38 +61,49 @@ const Joblist = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        {jobPostings.map((job) => (
-          <Col lg={12} key={job.id}>
-            <Card style={{ marginBottom: '20px' }}>
-              <Card.Body>
-                <Card.Title>{job.title}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">       
-                 <strong> Posted by:</strong> {job.by} 
-                <span style={{ marginLeft: '20px' }}><strong>on:</strong></span>{' '}
-                 {new Date(job.time * 1000).toLocaleString()}
-                </Card.Subtitle>
-                {job.url && (
-                  <Card.Link href={job.url} target="_blank" rel="noopener noreferrer">
-                    View Details
-                  </Card.Link>
-                )}
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      {hasMorePostings && currentPageIds.length > 0 && jobPostings.length > 0 && (
-        <Row>
-          <Col lg={12} className="text-center" style={{ marginTop: '20px' }}>
-            <button className="btn btn-primary" onClick={handleLoadMore}>
-              Load More
-            </button>
-          </Col>
-        </Row>
-      )}
-    </Container>
+   <Container>
+  <Row>
+    {jobPostings.map((job) => (
+      <Col lg={12} key={job.id}>
+        <Card style={{ marginBottom: '20px' }}>
+          <Card.Body>
+            <Card.Title 
+              style={{ 
+                textDecoration: job.url ? 'none' : 'underline', 
+                cursor: job.url ? 'pointer' : 'default', 
+              }}
+              onMouseEnter={(e) => { if (job.url) e.target.style.textDecoration = 'underline'; }}
+              onMouseLeave={(e) => { if (job.url) e.target.style.textDecoration = 'none'; }}
+            >
+              {job.url ? (
+              // If there's a URL, make the job title a link that opens in a new window
+                <a href={job.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {job.title}
+                </a>
+              ) :  (<span>{job.title}</span>)}
+            </Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">       
+             <strong> Posted by:</strong> {job.by} 
+            <span style={{ marginLeft: '20px' }}><strong>on:</strong></span>{' '}
+             {new Date(job.time * 1000).toLocaleString()}
+            </Card.Subtitle>
+          </Card.Body>
+        </Card>
+      </Col>
+    ))}
+  </Row>
+  {hasMorePostings && currentPageIds.length > 0 && jobPostings.length > 0 && (
+    <Row>
+      <Col lg={12} className="text-center" style={{ marginTop: '20px' }}>
+        <button className="btn btn-primary" onClick={handleLoadMore}>
+          Load More
+        </button>
+      </Col>
+    </Row>
+  )}
+</Container>
+
+
   );
 };
 
