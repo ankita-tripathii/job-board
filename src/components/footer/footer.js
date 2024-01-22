@@ -1,20 +1,17 @@
 import React from "react";
-// import Row from 'react-bootstrap/Row';
- import Col from 'react-bootstrap/Col';
-// import Container from "react-bootstrap/Container";
+import Col from 'react-bootstrap/Col';
 import styles from "./footer.module.css";
-//import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export default function Footer() {
   return (
     
-    <Col>
+    <Col lg={12}>
   	<Card className="text-center">
       <Card.Body className={styles.footerbody} >
-        <Card.Title>Get Started</Card.Title>
-        <Card.Text className={styles.footertext}>
-          The free, fun, and effective way to give Exames!
+        <Card.Title className={styles.titletext}>Get Started</Card.Title>
+        <Card.Text className={styles.bodytext}>
+          Free and Effective way to Find The Job!
         </Card.Text>
       </Card.Body>
     </Card>

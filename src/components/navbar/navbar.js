@@ -12,13 +12,18 @@
       <>
          <Navbar expand="lg" className={styles.bgBodyTertiary} sticky="top" >
         <Col lg={1} className={styles.brandstyle}  >
-         <Navbar.Brand href="/">Job Board</Navbar.Brand>
+         <Navbar.Brand href="/" style={{color: 'white'}}>Job Board</Navbar.Brand>
           </Col>
-          <Col lg={1} >
+          <Col lg={8} >
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
              <Nav className="me-auto" >
-              <Nav.Link href="#" style={{color: 'white'}}>Home</Nav.Link>
+              <Nav.Link href="/" style={{color: 'white'}}>Home</Nav.Link>
               <Nav.Link href="#" style={{color: 'white'}}>About</Nav.Link>
+            </Nav> 
+          </Col>
+          <Col lg={2} >
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+             <Nav className="me-auto" >
               <Nav.Link href="#" style={{color: 'white'}}>Login</Nav.Link>
             </Nav> 
           </Col>

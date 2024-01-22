@@ -1,8 +1,14 @@
 
 .footerbody {
-    background-color: white;
+    background-color: #FF9843;
   }
 
-.footertext{
-    color:black;
+.bodytext{
+    color:white;
   }
+
+.titletext{
+    color:white;
+    font-weight: bold;
+  }
+   
