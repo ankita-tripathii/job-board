@@ -68,8 +68,8 @@ const Joblist = () => {
         <Card style={{ marginBottom: '20px' }}>
           <Card.Body>
             <Card.Title 
+
               style={{ 
-                textDecoration: job.url ? 'none' : 'underline', 
                 cursor: job.url ? 'pointer' : 'default', 
               }}
               onMouseEnter={(e) => { if (job.url) e.target.style.textDecoration = 'underline'; }}
@@ -81,7 +81,9 @@ const Joblist = () => {
                   {job.title}
                 </a>
               ) :  (<span>{job.title}</span>)}
+
             </Card.Title>
+
             <Card.Subtitle className="mb-2 text-muted">       
              <strong> Posted by:</strong> {job.by} 
             <span style={{ marginLeft: '20px' }}><strong>on:</strong></span>{' '}
