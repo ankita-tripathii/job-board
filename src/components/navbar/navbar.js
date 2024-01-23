@@ -10,24 +10,21 @@
   export default function DNavbar() {
     return (
       <>
-         <Navbar expand="lg" className={styles.bgBodyTertiary} sticky="top" >
-        <Col lg={1} className={styles.brandstyle}  >
+       
+         <Navbar expand="lg" className={styles.bgBodyTertiary} sticky="top" > 
+        <Col lg={9} className={styles.brandstyle}  >
          <Navbar.Brand href="/" style={{color: 'white'}}>Job Board</Navbar.Brand>
-          </Col>
-          <Col lg={8} >
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-             <Nav className="me-auto" >
-              <Nav.Link href="/" style={{color: 'white'}}>Home</Nav.Link>
-              <Nav.Link href="#" style={{color: 'white'}}>About</Nav.Link>
-            </Nav> 
           </Col>
           <Col lg={2} >
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
              <Nav className="me-auto" >
+              <Nav.Link href="/" style={{color: 'white'}}>Home</Nav.Link>
+              <Nav.Link href="#" style={{color: 'white'}}>About</Nav.Link>
               <Nav.Link href="#" style={{color: 'white'}}>Login</Nav.Link>
             </Nav> 
-          </Col>
+          </Col> 
           </Navbar>   
+           
           </>
     );
   }
